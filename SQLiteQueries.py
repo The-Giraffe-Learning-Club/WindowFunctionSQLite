@@ -13,8 +13,8 @@ It create connection with the Name you specify to the DB
  """
  
 conn = sqlite3.connect('mydb.db')
-# prd = pd.read_csv('C:\\dev\\com\\johnson\\app\\blogsite\\blogs\\sampleData.csv')
-# prd.to_sql('prd_data', conn, if_exists='append', index = [0], chunksize = 10000)
+prd = pd.read_csv('C:\\dev\\com\\johnson\\app\\blogsite\\blogs\\sampleData.csv')
+prd.to_sql('prd_data', conn, if_exists='append', index = [0], chunksize = 10000)
 
 cur = conn.cursor()
 cur.execute("select * from prd_data where product_codes = '966119' or product_description like '%demarcate%';")
